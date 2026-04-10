@@ -30,7 +30,7 @@ function mostrarReprobados() {
     });
 }
 
-function calcularPromedio(){
+function calcularPromedio() {
     const suma = aprendices.reduce((acc, a) => acc + a.nota, 0);
     const promedio = suma / aprendices.length;
 
@@ -38,3 +38,88 @@ function calcularPromedio(){
     
 }
 
+// Funcion 5: Nombres mayuscula
+
+function nombresMayuscula() {
+    const nombres = aprendices.map(a => a.nombre.toUpperCase());
+    console.log(nombres);
+}
+
+// Funcion 6: Ordenar mayor a menor 
+
+function ordenarPorNota() {
+    const ordenados = aprendices.sort((a, b) => b.nota - a.nota);
+    console.log("Aprendices ordenados por nota", ordenados);
+}
+
+ // Funcion 7: Clasificar
+ function clasificarNota() {
+    let nivel;
+    switch (true) {
+        case nota < 3:
+        nivel = "Bajo";
+        break;
+
+        case nota < 4:
+        nivel = "Basico";
+        break;
+
+        case nota < 4.5:
+            nivel ="Alto";
+        break;
+
+        default:
+        nivel = "Superior";
+    }
+    console.log("Nivel:", nivel)
+}
+
+//Funcion 8: Menu
+function menu() {
+    let opcion;
+    while (opcion !== "0") {
+    opcion = parseInt(prompt("MENU:\n1. Mostrar aprendices\n2. Mostrar aprobados\n3. Mostrar reprobados\n4. Calcular promedio\n5. Nombres en mayuscula\n6. Ordenar por nota\n7. Clasificar nota\n0. Salir"));
+    
+    switch (opcion){
+        case 1:
+            mostrarAprendices();
+        break;
+        
+        case 2:
+            mostrarAprobados();
+        break;
+
+        case 3:
+            mostrarReprobados();
+        break;
+
+        case 4:
+            calcularPromedio();
+        break;
+
+        case 5:
+            nombresMayuscula();
+        break;
+
+        case 6:
+            ordenarPorNota();
+        break; 
+
+        case 7:
+            clasificarNota();
+        break;
+
+        case 0:
+        console.log("Saliendo del programa...");
+        break;
+
+        default:
+        console.log("Opcion no valida, por favor intente de nuevo.");
+    }       
+        
+    }
+
+ }
+ menu();
+
+ 
