@@ -30,3 +30,11 @@ function mostrarReprobados() {
     });
 }
 
+function calcularPromedio(){
+    const suma = aprendices.reduce((acc, a) => acc + a.nota, 0);
+    const promedio = suma / aprendices.length;
+
+    console.log("promedio", promedio);
+    
+}
+
